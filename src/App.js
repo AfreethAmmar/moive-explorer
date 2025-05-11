@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
-import Home from "./pages/Home";  // Correct import path for Home page
+import Home from "./pages/Home";  
 import Favorites from "./pages/Favorites";
 import MovieDetails from "./components/MovieDetails";
 import Navbar from "./components/Navbar";

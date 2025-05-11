@@ -1,9 +1,9 @@
-// src/components/Trending.jsx
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, CardMedia, CardContent, Typography, Grid } from '@mui/material';
 
-const API_KEY = 'c2161c2e8bc6560d1403bd754eb7b56e'; // <-- replace with your TMDb API key
+const API_KEY = 'c2161c2e8bc6560d1403bd754eb7b56e'; 
 
 const Trending = () => {
   const [movies, setMovies] = useState([]);

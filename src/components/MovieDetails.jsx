@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-// MUI Components and Theme Provider
+
 import {
   Box,
   Typography,
@@ -38,7 +38,7 @@ const MovieDetails = () => {
   const BACKDROP_SIZE = "w1280";
   const POSTER_SIZE = "w500";
 
-  // Create theme
+  
   const theme = createTheme({
     palette: {
       primary: {
@@ -51,7 +51,7 @@ const MovieDetails = () => {
     },
   });
 
-  // Format currency
+
   const formatCurrency = (amount) => {
     if (!amount) return "N/A";
     return new Intl.NumberFormat('en-US', {
@@ -65,19 +65,19 @@ const MovieDetails = () => {
     const fetchMovieData = async () => {
       setLoading(true);
       try {
-        // Movie details
+        
         const detailsRes = await axios.get(
           `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
         );
         setMovie(detailsRes.data);
 
-        // Cast & Crew
+        
         const creditsRes = await axios.get(
           `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`
         );
-        setCast(creditsRes.data.cast.slice(0, 6)); // Top 6 actors
+        setCast(creditsRes.data.cast.slice(0, 6));
 
-        // Trailer
+      
         const videoRes = await axios.get(
           `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`
         );
